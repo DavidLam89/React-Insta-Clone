@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import './App.css';
-import dummyData from './dummy-data';
-import PostContainer from './components/PostContainer/PostContainer';
-import SearchBar from './components/SearchBar/SearchBar';
-import { library } from '@fortawesome/fontawesome-svg-core'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faHeart } from '@fortawesome/free-regular-svg-icons'
-import { faCompass } from '@fortawesome/free-regular-svg-icons'
-import { faUser } from '@fortawesome/free-regular-svg-icons'
+import PostsPage from './components/PostContainer/PostsPage';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faHeart } from '@fortawesome/free-regular-svg-icons';
+import { faCompass } from '@fortawesome/free-regular-svg-icons';
+import { faUser } from '@fortawesome/free-regular-svg-icons';
+import authenticate from './components/Authentication/authenticate';
+import LoginPage from './components/Login/Login';
 
 library.add(faHeart)
 library.add(faCompass)
@@ -17,24 +17,16 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      instaData: []
     };
-  }
-
-  componentDidMount(){
-    this.setState({instaData: dummyData });
   }
 
   render() {
     return (
       <div className="App">
-          <SearchBar />
-          <PostContainer
-            posts={this.state.instaData}
-          />
+          <PostsPage />
       </div>
     );
   }
 }
 
-export default App;
+export default authenticate(App)(LoginPage);
