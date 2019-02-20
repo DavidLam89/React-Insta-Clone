@@ -2,6 +2,12 @@ import React, { Component } from 'react';
 import './App.css';
 import dummyData from './dummy-data';
 import PostContainer from './components/PostContainer/PostContainer';
+import SearchBar from './components/SearchBar/SearchBar';
+import { library } from '@fortawesome/fontawesome-svg-core'
+//import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faIgloo } from '@fortawesome/free-solid-svg-icons'
+
+library.add(faIgloo)
 
 class App extends Component {
   constructor() {
@@ -14,16 +20,10 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-
-        <div className="search-bar">
-        </div>
-
-        <div className="containers">
+          <SearchBar />
           <PostContainer
             posts={this.state.instaData}
           />
-        </div>
-
       </div>
     );
   }

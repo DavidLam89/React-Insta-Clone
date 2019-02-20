@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import './Post.css';
 
 const Post = props => {
@@ -18,14 +17,5 @@ const Post = props => {
         </div>
     );
 };
-
-Post.propTypes = {
-    post: PropTypes.shape({
-      username: PropTypes.string.isRequired,
-      thumbnailUrl: PropTypes.string.isRequired,
-      imageUrl: PropTypes.string.isRequired,
-      likes: PropTypes.number.isRequired
-    })
-  };
 
 export default Post;
