@@ -1,26 +1,41 @@
 .searchbar-container {
     padding: 0.5rem;
-    border-bottom: 1px solid #3333;
-    height: 80px;
-    line-height: 70px;
+    height: 50px;
     display: flex;
     justify-content: space-between;
+    align-items: center;
   }
   
   .image-container {
-    
+    display: flex;
     height: 50px;
+    align-items: center;
   }
   
   .logo-image {
-    height: 100%;
+    height: 70%;
+    padding-left: 1rem;
+  }
+
+  .camera-image {
+    height: 70%;
+    border-right: 0.1rem solid black;
+    padding-right: 1rem;
   }
   
   .social-container {
+    font-size: 1.5rem;
+    color: gray;
+    width: 8rem;
     display: flex;
+    justify-content: space-evenly;
   }
-  
-  .social {
-    width: 20px;
-    height: 20px;
+
+  .search-form {
+    border-radius: 0.3rem;
+    height: 25px;
+    background-image: url('./search.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    text-align: center;
   }

@@ -1,21 +1,35 @@
 import React from 'react';
 import './Post.css';
+import LikeSection from './LikeSection';
 
-const Post = props => {
-    return (
-        <div className='post'>
-                <div>
-                    <div className="user">
-                        <img className="thumbnail" src={props.post.thumbnailUrl} alt=""/>
-                        <strong>{props.post.username}</strong>
-                    </div>
-                    <img className="image" src={props.post.imageUrl} alt=""/>
-                    <div className="likes">
-                    <strong>{props.post.likes} likes</strong>
-                    </div>
-                </div>
-        </div>
-    );
-};
+class Post extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            likes: props.post.likes
+        }
+    }
+
+    incrementLike = () => {
+        let likes = this.state.likes + 1;
+        this.setState({ likes });
+      };
+
+    render () {
+        return (
+            <div className='post'>
+                        <div className="user">
+                            <img className="thumbnail" src={this.props.post.thumbnailUrl} alt=""/>
+                            <strong>{this.props.post.username}</strong>
+                        </div>
+                        <img className="image" src={this.props.post.imageUrl} alt=""/>
+                        <LikeSection
+                            incrementLike={this.incrementLike}
+                            likes={this.state.likes}
+                        />
+            </div>
+        );
+    }
+}
 
 export default Post;

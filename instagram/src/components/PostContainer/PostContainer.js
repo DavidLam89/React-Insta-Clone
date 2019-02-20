@@ -9,10 +9,7 @@ const PostContainer = props => {
             {props.posts.map(element => (
                 <div className='box'>
                     <Post post={element}/>
-                    <CommentSection comments={element.comments}/>
-                    <div className="input">
-                    Add a comment... 
-                    </div>     
+                    <CommentSection comments={element.comments}/>  
                 </div>
             ))}
         </div>

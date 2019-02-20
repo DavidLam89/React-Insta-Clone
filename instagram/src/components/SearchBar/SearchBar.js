@@ -1,26 +1,23 @@
 import React from 'react';
 import './SearchBar.css';
+import iglogo from './iglogo.png'
+import camera from './camera.svg'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-const SearchBar = () => {
+const SearchBar = ()=> {
   return (
     <div className="searchbar-container">
       <div className="image-container">
-        <img alt="logo" src="./iglogo.png" className="logo-image" />
+        <img alt="camera" src={camera} className="camera-image" />
+        <img alt="logo" src={iglogo} className="logo-image" />
       </div>
       <div>
-        <input type="text" placeholder="Search" />
+        <input type="text" placeholder="Search" className="search-form"/>
       </div>
       <div className="social-container">
-        <div className="social">
-        <FontAwesomeIcon icon="igloo" />
-        </div>
-        <div className="social">
-        <FontAwesomeIcon icon="igloo" />
-        </div>
-        <div className="social">
-        <FontAwesomeIcon icon="igloo" />
-        </div>
+        <FontAwesomeIcon icon={['far', 'compass']} />
+        <FontAwesomeIcon icon={['far', 'heart']} />
+        <FontAwesomeIcon icon={['far', 'user']} />
       </div>
     </div>
   );
