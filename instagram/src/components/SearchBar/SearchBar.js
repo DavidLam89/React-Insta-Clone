@@ -3,23 +3,44 @@ import './SearchBar.css';
 import iglogo from './iglogo.png'
 import camera from './camera.svg'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import styled from 'styled-components'
+
+export const SearchBarContainer = styled.div`
+  padding: 0.5rem;
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+`;
+const ImageContainer = styled.div`
+  display: flex;
+  height: 50px;
+  align-items: center;
+`;
+const SocialContainer = styled.div`
+  font-size: 1.5rem;
+  color: gray;
+  width: 8rem;
+  display: flex;
+  justify-content: space-evenly;
+`;
 
 const SearchBar = props => {
   return (
-    <div className="searchbar-container">
-      <div className="image-container">
+    <SearchBarContainer>
+      <ImageContainer>
         <img alt="camera" src={camera} className="camera-image" />
         <img alt="logo" src={iglogo} className="logo-image" />
-      </div>
+      </ImageContainer>
       <div>
         <input type="text" placeholder="Search" className="search-form" onChange={props.changeSearch}/>
       </div>
-      <div className="social-container">
+      <SocialContainer>
         <FontAwesomeIcon icon={['far', 'compass']} />
         <FontAwesomeIcon icon={['far', 'heart']} />
         <FontAwesomeIcon icon={['far', 'user']} />
-      </div>
-    </div>
+      </SocialContainer>
+    </SearchBarContainer>
   );
 };
 

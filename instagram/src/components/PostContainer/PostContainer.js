@@ -7,7 +7,7 @@ const PostContainer = props => {
     let filteredposts = props.posts;
     filteredposts = props.posts.filter(element => element.username.includes(props.searchText));
     return (
-        <div className='container'>
+        <div>
             {filteredposts.map(element => (
                 <div className='box'>
                     <Post post={element}/>

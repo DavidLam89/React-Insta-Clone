@@ -1,17 +1,3 @@
-.searchbar-container {
-    padding: 0.5rem;
-    height: 50px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  .image-container {
-    display: flex;
-    height: 50px;
-    align-items: center;
-  }
-  
   .logo-image {
     height: 70%;
     padding-left: 1rem;
@@ -21,14 +7,6 @@
     height: 70%;
     border-right: 0.1rem solid black;
     padding-right: 1rem;
-  }
-  
-  .social-container {
-    font-size: 1.5rem;
-    color: gray;
-    width: 8rem;
-    display: flex;
-    justify-content: space-evenly;
   }
 
   .search-form {

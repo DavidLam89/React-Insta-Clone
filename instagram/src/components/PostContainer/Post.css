@@ -1,14 +1,3 @@
-.user {
-    display: flex;
-    align-items: center;
-}
-
-.thumbnail {
-    height: 3rem;
-    border-radius: 100%;
-    padding: 1rem;
-}
-
 .image {
     width: 100%;
 }
