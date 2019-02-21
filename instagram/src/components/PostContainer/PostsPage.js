@@ -7,8 +7,13 @@ class PostsPage extends Component {
   constructor() {
     super();
     this.state = {
-      instaData: []
+      instaData: [],
+      searchText: ""
     };
+  }
+
+  searchHandler = e => {
+    this.setState({ searchText: e.target.value });
   }
 
   componentDidMount(){
@@ -18,9 +23,10 @@ class PostsPage extends Component {
   render() {
     return (
       <div className="App">
-          <SearchBar />
+          <SearchBar changeSearch={this.searchHandler}/>
           <PostContainer
             posts={this.state.instaData}
+            searchText={this.state.searchText}
           />
       </div>
     );

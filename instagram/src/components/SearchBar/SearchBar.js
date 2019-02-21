@@ -4,7 +4,7 @@ import iglogo from './iglogo.png'
 import camera from './camera.svg'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-const SearchBar = ()=> {
+const SearchBar = props => {
   return (
     <div className="searchbar-container">
       <div className="image-container">
@@ -12,7 +12,7 @@ const SearchBar = ()=> {
         <img alt="logo" src={iglogo} className="logo-image" />
       </div>
       <div>
-        <input type="text" placeholder="Search" className="search-form"/>
+        <input type="text" placeholder="Search" className="search-form" onChange={props.changeSearch}/>
       </div>
       <div className="social-container">
         <FontAwesomeIcon icon={['far', 'compass']} />

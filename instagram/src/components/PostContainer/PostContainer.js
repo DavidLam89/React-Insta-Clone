@@ -4,9 +4,11 @@ import Post from './Post'
 import './PostContainer.css';
 
 const PostContainer = props => {
+    let filteredposts = props.posts;
+    filteredposts = props.posts.filter(element => element.username.includes(props.searchText));
     return (
         <div className='container'>
-            {props.posts.map(element => (
+            {filteredposts.map(element => (
                 <div className='box'>
                     <Post post={element}/>
                     <CommentSection comments={element.comments}/>  
