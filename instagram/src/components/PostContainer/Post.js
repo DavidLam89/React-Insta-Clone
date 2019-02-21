@@ -6,14 +6,15 @@ class Post extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            likes: props.post.likes
+            likes: props.post.likes,
+            likeStatus: false
         }
     }
 
     incrementLike = () => {
-        let likes = this.state.likes + 1;
-        this.setState({ likes });
-      };
+        this.setState({ likeStatus: !this.state.likeStatus });
+    }
+    
 
     render () {
         return (
@@ -26,6 +27,7 @@ class Post extends React.Component {
                         <LikeSection
                             incrementLike={this.incrementLike}
                             likes={this.state.likes}
+                            likeStatus={this.state.likeStatus}
                         />
             </div>
         );
