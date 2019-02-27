@@ -1,0 +1,12 @@
+.image {
+    width: 100%;
+}
+
+.likes {
+    font-size: 1.5rem;
+}
+
+.liked {
+    font-size: 1.5rem;
+    color: red;
+}
